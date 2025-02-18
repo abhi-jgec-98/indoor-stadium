@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indore Stadium - Student Profile & Course Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .student-profile, .booking-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .student-profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            float: left;
+            margin-right: 20px;
+        }
+        .student-profile h2 {
+            color: #333;
+        }
+        .student-profile p {
+            color: #666;
+            font-size: 1.1em;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-size: 1.1em;
+            color: #333;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1em;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Indore Stadium - Student Profile & Course Booking</h1>
+</header>
+
+<div class="container">
+
+    <!-- Student Profile Section -->
+    <div class="student-profile">
+        <img src="C:\avii\project\image\stu_image.jpg" alt="Student Image">
+        <h2>Student Name: Avishek Roy</h2>
+        <p><strong>Student ID:</strong> 12345</p>
+        <p><strong>Course Enrolled:</strong> Basketball</p>
+        <p><strong>Upcoming Events:</strong> Indoor Track Meet, Basketball Tournament</p>
+        <div class="buttons">
+            <a href="#" class="btn">View Schedule</a>
+            <a href="#" class="btn">Update Profile</a>
+        </div>
+    </div>
+
+    <!-- Course Booking Form Section -->
+    <div class="booking-form">
+        <h2>Book a Course</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="course">Select Course</label>
+                <select id="course" name="course" required>
+                    <option value="athletics">Advanced Athletics</option>
+                    <option value="basketball">Basketball Training</option>
+                    <option value="Table Tennis">Table Tennis</option>
+		    <option value="Volleyball">Volleyball</option>
+                    <option value="swimming">Swimming Techniques</option>
+
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Book Course">
+            </div>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

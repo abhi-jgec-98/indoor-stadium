@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Indoor Sports Coaching</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .sports-section, .coaches-section, .admission-section {
+            margin: 50px 0;
+        }
+        .sports-section h2, .coaches-section h2, .admission-section h2 {
+            color: #4CAF50;
+        }
+        .sports-list, .coaches-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .sports-item, .coach-item {
+            background-color: #fff;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .sports-item img, .coach-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .admission-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .admission-form input, .admission-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .admission-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .admission-form button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Indoor Sports Coaching</h1>
+        <p>Your gateway to professional coaching and indoor sports training</p>
+    </header>
+
+    <div class="container">
+        <!-- Sports Section -->
+        <section class="sports-section">
+            <h2>Indoor Sports We Offer</h2>
+            <div class="sports-list">
+                <div class="sports-item">
+                    <img src="C:\avii\project\image\ba.jpg" alt="Basketball">
+                    <h3>Basketball</h3>
+                    <p>Indoor basketball training for all skill levels.</p>
+                </div>
+                <div class="sports-item">
+                    <img src="C:\avii\project\image\b.jpg" alt="Badminton">
+                    <h3>Badminton</h3>
+                    <p>Train with professional coaches for badminton.</p>
+                </div>
+                <div class="sports-item">
+                    <img src="C:\avii\project\image\ta.jpg" alt="Table Tennis">
+                    <h3>Table Tennis</h3>
+                    <p>Improve your skills with our table tennis coaches.</p>
+                </div>
+                <div class="sports-item">
+                    <img src="C:\avii\project\image\vol.jpg" alt="Volleyball">
+                    <h3>Volleyball</h3>
+                    <p>Expert volleyball coaching indoors.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coaches Section -->
+        <section class="coaches-section">
+            <h2>Our Professional Coaches</h2>
+            <div class="coaches-list">
+                <div class="coach-item">
+                    <img src="C:\avii\project\image\j.jpg" alt="Coach 1">
+                    <h3>Coach John Doe</h3>
+                    <p>Specializing in Basketball coaching, 10+ years of experience.</p>
+                </div>
+                <div class="coach-item">
+                    <img src="C:\avii\project\image\sm.jpg" alt="Coach 2">
+                    <h3>Coach Jane Smith</h3>
+                    <p>Badminton expert with a proven track record of success.</p>
+                </div>
+                <div class="coach-item">
+                    <img src="C:\avii\project\image\lee.jpg" alt="Coach 3">
+                    <h3>Coach Mike Lee</h3>
+                    <p>Professional table tennis coach with international experience.</p>
+                </div>
+                <div class="coach-item">
+                    <img src="C:\avii\project\image\emm.jpg" alt="Coach 4">
+                    <h3>Coach Emma White</h3>
+                    <p>Volleyball coaching with a focus on technique and teamwork.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admission Section -->
+        <section class="admission-section">
+            <h2>Join Our Training Program</h2>
+            <div class="admission-form">
+                <h3>Register for Coaching</h3>
+                <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <textarea name="message" placeholder="Your Message or Request" rows="4"></textarea>
+                    <button type="submit">Submit Application</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Indoor Sports Coaching. All rights reserved.</p>
+    </footer>
+</body>
+</html>
