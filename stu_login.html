@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .login-container {
+      width: 100%;
+      max-width: 400px;
+      margin: 100px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 1.1em;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .form-group input[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+      font-size: 1.1em;
+      border: none;
+    }
+    .form-group input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Student Login</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="user_id">User ID</label>
+        <input type="text" id="user_id" name="user_id" placeholder="Enter your User ID" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+      </div>
+      <div class="error" id="errorMsg">Invalid User ID or Password. Please try again.</div>
+      <div class="form-group">
+        <input type="submit" value="Login">
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Fetch student data from localStorage
+    function getStudentsForLogin() {
+      const students = JSON.parse(localStorage.getItem("students")) || [];
+      return students.map((student) => ({
+        user_id: student.userId,
+        password: student.passkey,
+      }));
+    }
+
+    // Handle login form submission
+    const loginForm = document.getElementById("loginForm");
+    const errorMsg = document.getElementById("errorMsg");
+
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent form from refreshing the page
+
+      // Get form values
+      const userId = document.getElementById("user_id").value.trim();
+      const password = document.getElementById("password").value;
+
+      // Fetch stored users
+      const storedUsers = getStudentsForLogin();
+
+      // Validate user credentials
+      const isValidUser = storedUsers.some(
+        (user) => user.user_id === userId && user.password === password
+      );
+
+      if (isValidUser) {
+        // Redirect to profile page with query parameter
+        window.location.href = `http://127.0.0.1:5500/profile.html?query=${userId}`;
+      } else {
+        // Show error message
+        errorMsg.style.display = "block";
+      }
+    });
+  </script>
+
+</body>
+</html>

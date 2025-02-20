@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Student Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #4caf50;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .container {
+      width: 80%;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #4caf50;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile-info {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .profile-info p {
+      margin: 10px 0;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Student Profile</h1>
+  </header>
+
+  <div class="container">
+    <h2>Profile Details</h2>
+    <div class="profile-info" id="profileInfo">
+      <!-- Student details will be populated dynamically -->
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Indoor Sports Coaching. All rights reserved.</p>
+  </footer>
+
+  <script>
+
+    // Get the query string from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Extract the value of the 'query' parameter
+    const queryParam = urlParams.get("query");
+
+    // Fetch student data from localStorage
+    const students = JSON.parse(localStorage.getItem("students")) || [];
+
+    // Find the student based on userId
+    const student = students.find((student) => student.userId === queryParam);
+
+    // Populate the profile details
+    const profileInfoDiv = document.getElementById("profileInfo");
+    if (student) {
+      profileInfoDiv.innerHTML = `
+        <p><strong>Name:</strong> ${student.name}</p>
+        <p><strong>Course:</strong> ${student.course}</p>
+        <p><strong>Email:</strong> ${student.email}</p>
+        <p><strong>Phone:</strong> ${student.phone}</p>
+        <p><strong>Status:</strong> ${student.status}</p>
+        <p><strong>User ID:</strong> ${student.userId}</p>
+      `;
+    } else {
+      profileInfoDiv.innerHTML = `
+        <p style="color: red; text-align: center;">
+          Student profile not found. Please check the User ID.
+        </p>
+      `;
+    }
+  </script>
+</body>
+</html>

@@ -1,200 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Indoor Sports Admission List</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-        header h1 {
-            margin: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 30px auto;
-        }
-        h2 {
-            color: #4CAF50;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table th, table td {
-            padding: 12px;
-            text-align: center;
-            border: 1px solid #ddd;
-        }
-        table th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        table tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        table tr:hover {
-            background-color: #ddd;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #4CAF50;
-            color: white;
-            padding: 8px 20px;
-            text-align: center;
-            border-radius: 4px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .btn:hover {
-            background-color: #45a049;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 50px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      header {
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+      header h1 {
+        margin: 0;
+      }
+      .container {
+        width: 80%;
+        margin: 30px auto;
+      }
+      h2 {
+        color: #4caf50;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table th,
+      table td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #ddd;
+      }
+      table th {
+        background-color: #4caf50;
+        color: white;
+      }
+      table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      table tr:hover {
+        background-color: #ddd;
+      }
+      .btn {
+        display: inline-block;
+        background-color: #4caf50;
+        color: white;
+        padding: 8px 20px;
+        text-align: center;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .btn:hover {
+        background-color: #45a049;
+      }
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 50px;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <h1>Indoor Sports Admission List</h1>
-        <p>Track your admission status for various indoor sports coaching programs</p>
+      <h1>Indoor Sports Admission List</h1>
+      <p>
+        Track your admission status for various indoor sports coaching programs
+      </p>
     </header>
 
     <div class="container">
-        <h2>Student Admission List for Indoor Sports</h2>
-        
-        <table id="admissionList">
-            <thead>
-                <tr>
-                    <th>Student Name</th>
-                    <th>Course</th> <!-- Changed from Sport to Course -->
-                    <th>Email</th>
-                    <th>Phone Number</th>
-                    <th>Admission Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Table rows will be dynamically populated -->
-            </tbody>
-        </table>
-        
-        <div style="text-align: center; margin-top: 20px;">
-            <button class="btn" onclick="showPendingList()">Show Pending Approvals</button>
-        </div>
+      <h2>Student Admission List for Indoor Sports</h2>
 
-        <div id="pendingList" style="margin-top: 20px; display: none;">
-            <h3 style="text-align: center;">Pending Approvals</h3>
-            <ul style="list-style: none; padding: 0;">
-                <!-- This will be populated dynamically -->
-            </ul>
-        </div>
+      <table id="admissionList">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Course</th>
+            <!-- Changed from Sport to Course -->
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Admission Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table rows will be dynamically populated -->
+        </tbody>
+      </table>
+
+      <div style="text-align: center; margin-top: 20px">
+        <button class="btn" onclick="showPendingList()">
+          Show Pending Approvals
+        </button>
+      </div>
+
+      <div id="pendingList" style="margin-top: 20px; display: none">
+        <h3 style="text-align: center">Pending Approvals</h3>
+        <ul style="list-style: none; padding: 0">
+          <!-- This will be populated dynamically -->
+        </ul>
+      </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Indoor Sports Coaching. All rights reserved.</p>
+      <p>&copy; 2025 Indoor Sports Coaching. All rights reserved.</p>
     </footer>
 
     <script>
-        // Initialize and store student data in localStorage if not already present
-        const studentList = [
-            { name: "Avishek Roy", course: "Basketball", email: "avi.doe@gmail.com", phone: "(91)+ 96419 07200", status: "Pending" },
-            { name: "Sougata Roy", course: "Badminton", email: "sougata@gmail.com", phone: "(91)+ 96419 07900", status: "Pending" },
-            { name: "Arun Das", course: "Table Tennis", email: "arundas@gmail.com", phone: "(91)+ 96419 07100", status: "Pending" },
-            { name: "Raja Saha", course: "Volleyball", email: "rajasaha@gmail.com", phone: "(91)+ 96419 07300", status: "Pending" },
-            { name: "Bumba Dutta", course: "Basketball", email: "bumba11@gmail.com", phone: "(91)+ 96419 07400", status: "Pending" }
-        ];
+      // Initialize and store student data in localStorage if not already present
+      const studentList = [
+        {
+          name: "Avishek Roy",
+          course: "Basketball",
+          email: "avi.doe@gmail.com",
+          phone: "(91)+ 96419 07200",
+          status: "Pending",
+        },
+        {
+          name: "Sougata Roy",
+          course: "Badminton",
+          email: "sougata@gmail.com",
+          phone: "(91)+ 96419 07900",
+          status: "Pending",
+        },
+        {
+          name: "Arun Das",
+          course: "Table Tennis",
+          email: "arundas@gmail.com",
+          phone: "(91)+ 96419 07100",
+          status: "Pending",
+        },
+        {
+          name: "Raja Saha",
+          course: "Volleyball",
+          email: "rajasaha@gmail.com",
+          phone: "(91)+ 96419 07300",
+          status: "Pending",
+        },
+        {
+          name: "Bumba Dutta",
+          course: "Basketball",
+          email: "bumba11@gmail.com",
+          phone: "(91)+ 96419 07400",
+          status: "Pending",
+        },
+      ];
 
-        if (!localStorage.getItem("students")) {
-            localStorage.setItem("students", JSON.stringify(studentList));
+      if (!localStorage.getItem("students")) {
+        localStorage.setItem("students", JSON.stringify(studentList));
+      }
+
+      // Populate the admission list table
+      function populateAdmissionTable() {
+        const students = JSON.parse(localStorage.getItem("students")) || [];
+        const tableBody = document.querySelector("#admissionList tbody");
+        tableBody.innerHTML = ""; // Clear the table
+
+        students.forEach((student) => {
+          const row = document.createElement("tr");
+          row.dataset.name = student.name;
+
+          // Check if the student is approved and create a link for their name
+          const studentName =
+            student.status === "Approved"
+              ? `<a href="/profile.html?query=${encodeURIComponent(
+                  student.userId
+                )}" target="_blank" style="color: #4CAF50; text-decoration: none;">${
+                  student.name
+                }</a>`
+              : student.name;
+
+          row.innerHTML = `
+                        <td>${studentName}</td>
+                        <td>${student.course}</td>
+                        <td>${student.email}</td>
+                        <td>${student.phone}</td>
+                        <td class="status">${student.status}</td>
+                    `;
+          tableBody.appendChild(row);
+        });
+      }
+
+      // Show pending approvals
+      function showPendingList() {
+        const students = JSON.parse(localStorage.getItem("students")) || [];
+        const pendingStudents = students.filter(
+          (student) => student.status === "Pending"
+        );
+
+        const pendingListDiv = document.getElementById("pendingList");
+        const ul = pendingListDiv.querySelector("ul");
+
+        // Clear existing list items
+        ul.innerHTML = "";
+
+        // Populate the list with pending students
+        pendingStudents.forEach((student) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+                        ${student.name} (${student.course})
+                        <button class='btn' onclick='approveStudent("${student.name}")'>Approve</button>
+                    `;
+          ul.appendChild(li);
+        });
+
+        // Show the list
+        pendingListDiv.style.display = "block";
+      }
+
+      function approveStudent(name) {
+        let students = JSON.parse(localStorage.getItem("students")) || [];
+      
+        // Update the status, generate a user ID, and create a passkey for the approved student
+        students = students.map((student) => {
+          if (student.name === name) {
+            student.status = "Approved";
+      
+            // Generate a unique user ID if not already assigned
+            if (!student.userId) {
+              student.userId = generateUserId(student.name);
+            }
+      
+            // Generate a random passkey if not already assigned
+            if (!student.passkey) {
+              student.passkey = generatePasskey();
+            }
+          }
+          return student;
+        });
+      
+        // Save the updated list back to localStorage
+        localStorage.setItem("students", JSON.stringify(students));
+      
+        // Update the table and pending list
+        populateAdmissionTable();
+        showPendingList();
+      
+        // Find the approved student to display their User ID and passkey
+        const approvedStudent = students.find((student) => student.name === name);
+        alert(
+          `${name} has been approved.\nUser ID: ${approvedStudent.userId}\nPasskey: ${approvedStudent.passkey}`
+        );
+        console.log(approvedStudent.userId, approvedStudent.passkey);
+      }
+      
+      // Helper function to generate a unique user ID
+      function generateUserId(name) {
+        const timestamp = Date.now().toString().slice(-6); // Last 6 digits of current timestamp
+        const cleanedName = name.toLowerCase().replace(/\s+/g, ""); // Remove spaces and lowercase the name
+        return `${cleanedName}_${timestamp}`;
+      }
+      
+      // Helper function to generate a random passkey
+      function generatePasskey() {
+        const characters =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let passkey = "";
+        for (let i = 0; i < 8; i++) {
+          passkey += characters.charAt(Math.floor(Math.random() * characters.length));
         }
+        return passkey;
+      }
+      
 
-        // Populate the admission list table
-        function populateAdmissionTable() {
-            const students = JSON.parse(localStorage.getItem("students")) || [];
-            const tableBody = document.querySelector("#admissionList tbody");
-            tableBody.innerHTML = ""; // Clear the table
-
-            students.forEach(student => {
-                const row = document.createElement("tr");
-                row.dataset.name = student.name;
-                row.innerHTML = `
-                    <td>${student.name}</td>
-                    <td>${student.course}</td> <!-- Changed from sport to course -->
-                    <td>${student.email}</td>
-                    <td>${student.phone}</td>
-                    <td class="status">${student.status}</td>
-                `;
-                tableBody.appendChild(row);
-            });
-        }
-
-        // Show pending approvals
-        function showPendingList() {
-            const students = JSON.parse(localStorage.getItem("students")) || [];
-            const pendingStudents = students.filter(student => student.status === "Pending");
-
-            const pendingListDiv = document.getElementById("pendingList");
-            const ul = pendingListDiv.querySelector("ul");
-
-            // Clear existing list items
-            ul.innerHTML = "";
-
-            // Populate the list with pending students
-            pendingStudents.forEach(student => {
-                const li = document.createElement("li");
-                li.innerHTML = `${student.name} (${student.course}) <button class='btn' onclick='approveStudent("${student.name}")'>Approve</button>`; <!-- Changed sport to course -->
-                ul.appendChild(li);
-            });
-
-            // Show the list
-            pendingListDiv.style.display = "block";
-        }
-
-        // Approve a student
-        function approveStudent(name) {
-            let students = JSON.parse(localStorage.getItem("students")) || [];
-
-            // Update the status of the approved student
-            students = students.map(student => {
-                if (student.name === name) {
-                    student.status = "Approved";
-                }
-                return student;
-            });
-
-            // Save the updated list back to localStorage
-            localStorage.setItem("students", JSON.stringify(students));
-
-            // Update the table and pending list
-            populateAdmissionTable();
-            showPendingList();
-
-            alert(`${name} has been approved.`);
-        }
-
-        // Populate the table on page load
-        window.onload = populateAdmissionTable;
+      // Populate the table on page load
+      window.onload = populateAdmissionTable;
     </script>
-
-</body>
+  </body>
 </html>
